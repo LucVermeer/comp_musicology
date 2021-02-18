@@ -1,10 +1,15 @@
 ---
-title: "Portfolio Luc Vermeer"
-output: html_document
+title: "My Portfolio"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    # highlight: github
+author: "Luc Vermeer"
 
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+library(prettydoc)
 library(tidyverse)
 library(spotifyr)
 library(knitr)
