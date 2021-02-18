@@ -7,6 +7,15 @@ output: html_document
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
 library(tidyverse)
 library(spotifyr)
+library(knitr)
+library(ggplot2)
 access_token <- get_spotify_access_token()
 ```
 ### Welcome to my Portfolio
+
+<iframe src="https://open.spotify.com/embed/playlist/0Y2jcmjMMwIUVFKojiBMmc" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+```{r}
+trackmania <- get_playlist_audio_features("", "0Y2jcmjMMwIUVFKojiBMmc")
+
+ggplot(trackmania, aes(x = key_mode)) + geom_histogram(stat = "count", labels = abbreviate)
+```
